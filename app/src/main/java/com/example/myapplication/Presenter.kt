@@ -1,9 +1,10 @@
 package com.example.myapplication
 
 class Presenter {
+   val games = Games()
 
-
-    constructor(){
-
+    fun getTurn(): String{
+        return games.getTurn()
     }
+
 }

@@ -16,6 +16,8 @@ class Games {
 
     var winner = 0
 
+    var turn = 1
+
     fun player_Turn(position: Int): Unit{
         if(position == 1){
             a = 1
@@ -95,5 +97,21 @@ class Games {
 
     fun printBoard(): String{
         return "\n $a  $b  $c \n $d    $e  $f \n   $g  $h  $i"
+    }
+
+    fun getTurn(): String{
+        if(turn == 1){
+            val res = turn
+            turn++
+            return "Player 1"
+        }else{
+            val res = turn
+            turn--
+            return "Player 2"
+        }
+    }
+
+    fun takeTurn(position: Int){
+
     }
 }

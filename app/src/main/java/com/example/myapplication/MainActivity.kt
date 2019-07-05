@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Button
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity(){
     val x = "X"
@@ -15,9 +16,8 @@ class MainActivity : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         initButton()
-
+        Toast.makeText(applicationContext, presenter.getTurn()+" Turn !", Toast.LENGTH_SHORT).show()
     }
 
     fun initButton(): Unit{
@@ -67,6 +67,16 @@ class MainActivity : AppCompatActivity(){
     fun toggleButton(btn: Button, sign: String): Unit{
         btn.setText(sign)
     }
+
+
+    fun takeTurn(): Unit{
+        // ask whose turn it is
+
+        // update data on model
+
+        //
+    }
+
 
 
 
