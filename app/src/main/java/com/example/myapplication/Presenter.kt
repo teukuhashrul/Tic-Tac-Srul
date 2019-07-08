@@ -20,4 +20,8 @@ class Presenter {
         return games.getWinner()
     }
 
+    fun isDraw(): Boolean{
+        return games.isDraw()
+    }
+
 }

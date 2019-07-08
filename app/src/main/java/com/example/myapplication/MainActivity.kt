@@ -111,7 +111,12 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(applicationContext, "The Winner is  Player $winner ! ", Toast.LENGTH_LONG).show()
             }else{
                 val nowPlaying = presenter.getTurn()
-                Toast.makeText(applicationContext, "Player $nowPlaying Turn !" , Toast.LENGTH_LONG).show()
+                if(!presenter.isDraw()){
+                    Toast.makeText(applicationContext, "Player $nowPlaying Turn !" , Toast.LENGTH_LONG).show()
+                }else{
+                    Toast.makeText(applicationContext, "Draw !!" , Toast.LENGTH_LONG).show()
+
+                }
             }
         }
     }

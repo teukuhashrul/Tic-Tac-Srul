@@ -20,6 +20,7 @@ class Games {
 
     private var turn = 1
 
+    private var filledBoxes = 0
     fun player_Turn(position: Int): Unit{
         if(position == 1){
             a = 1
@@ -149,6 +150,14 @@ class Games {
         }
         // return whose turn it is
         checkAll()
+        // increment the checkedBoxes
+        filledBoxes++
         return res
     }
+
+    fun isDraw(): Boolean{
+        if(filledBoxes == 9) return true
+        return false
+    }
+
 }
