@@ -1,15 +1,19 @@
 package com.example.myapplication
 
+import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import androidx.core.os.bundleOf
+import androidx.fragment.app.DialogFragment
 
-class MainActivity : AppCompatActivity(){
-    val x = "X"
-    val o = "O"
+class MainActivity : AppCompatActivity() {
+   private val x = "X"
+   private val o = "O"
 
     val presenter = Presenter()
 
@@ -17,50 +21,76 @@ class MainActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         initButton()
-        Toast.makeText(applicationContext, presenter.getTurn()+" Turn !", Toast.LENGTH_SHORT).show()
+
+        val model = Games()
+
+        // give landing page
+        landingPage()
+
+
+
     }
 
     fun initButton(): Unit{
         val btn_1 = findViewById(R.id.btn_1) as Button
         btn_1.setOnClickListener{
-            toggleButton(btn_1 , x)
+            if(checkCell(btn_1)){
+                takeTurn(btn_1, 1)
+            }
+
         }
         val btn_2 = findViewById(R.id.btn_2) as Button
         btn_2.setOnClickListener{
-           toggleButton(btn_2 , x)
+            if(checkCell(btn_2)){
+                takeTurn(btn_2, 2)
+            }
         }
         val btn_3 = findViewById(R.id.btn_3) as Button
         btn_3.setOnClickListener{
-            toggleButton(btn_3, x)
+            if(checkCell(btn_3)){
+                takeTurn(btn_3, 3)
+            }
         }
 
         val btn_4 = findViewById(R.id.btn_4) as Button
         btn_4.setOnClickListener{
-            toggleButton(btn_4, x)
+            if(checkCell(btn_4)){
+                takeTurn(btn_4, 4)
+            }
         }
 
         val btn_5 = findViewById(R.id.btn_5) as Button
         btn_5.setOnClickListener{
-            toggleButton(btn_5,x)
+            if(checkCell(btn_5)){
+                takeTurn(btn_5, 5)
+            }
         }
 
         val btn_6 = findViewById(R.id.btn_6) as Button
         btn_6.setOnClickListener{
-            toggleButton(btn_6,x)
+            if(checkCell(btn_6)){
+                takeTurn(btn_6, 6)
+            }
         }
 
         val btn_7 = findViewById(R.id.btn_7) as Button
         btn_7.setOnClickListener{
-            toggleButton(btn_7, x)
+            if(checkCell(btn_7)){
+                takeTurn(btn_7, 7)
+            }
         }
 
         val btn_8 = findViewById(R.id.btn_8) as Button
         btn_8.setOnClickListener{
-            toggleButton(btn_8, x)
+            if(checkCell(btn_8)){
+                takeTurn(btn_8, 8)
+            }
         }
         val btn_9 = findViewById(R.id.btn_9) as Button
         btn_9.setOnClickListener{
-            toggleButton(btn_9, x)
+            if(checkCell(btn_9)){
+                takeTurn(btn_9, 9)
+            }
         }
     }
 
@@ -69,12 +99,51 @@ class MainActivity : AppCompatActivity(){
     }
 
 
-    fun takeTurn(): Unit{
-        // ask whose turn it is
+    fun takeTurn(btn: Button, position: Int ): Unit{
+        if(presenter.getWinner() == 0){
+            // update data on model
+            val res = presenter.takeTurn(position)
+            // update view
+            toggleButton(btn, getTurn(res))
+            // check if there is a winner in the game
+            if(presenter.checkGame()){
+                val winner = presenter.getWinner()
+                Toast.makeText(applicationContext, "The Winner is  Player $winner ! ", Toast.LENGTH_LONG).show()
+            }else{
+                val nowPlaying = presenter.getTurn()
+                Toast.makeText(applicationContext, "Player $nowPlaying Turn !" , Toast.LENGTH_LONG).show()
+            }
+        }
+    }
 
-        // update data on model
+    fun checkCell(btn: Button): Boolean{
+        if(btn.text != "") return false
+        return true
+    }
 
-        //
+    fun getTurn(turn: Int): String{
+        if(turn == 1) return x
+        else return o
+
+    }
+
+    fun landingPage(): Unit{
+        val alertDialog = AlertDialog.Builder(this)
+        alertDialog.setMessage("Welcome to Tic Tac Srul")
+
+        alertDialog.setPositiveButton("Play", DialogInterface.OnClickListener(){ dialogInterface: DialogInterface, i: Int ->
+               Toast.makeText(applicationContext, "Good Luck !" ,Toast.LENGTH_LONG).show()
+        })
+
+        alertDialog.setNegativeButton("Exit", DialogInterface.OnClickListener(){
+            dialogInterface : DialogInterface, i: Int ->
+
+            System.exit(0)
+
+        } )
+
+
+        alertDialog.show()
     }
 
 
