@@ -143,7 +143,7 @@ class Games {
 
         }else{
             // toggle turn into the opposite
-            turn =1
+            turn = 1
             // call enemy turn
             enemy_Turn(position)
         }
