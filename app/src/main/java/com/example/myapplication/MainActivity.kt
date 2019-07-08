@@ -11,12 +11,19 @@ import androidx.appcompat.app.AlertDialog
 import androidx.core.os.bundleOf
 import androidx.fragment.app.DialogFragment
 
+/**
+ * class main activity for the ui
+ */
 class MainActivity : AppCompatActivity() {
+    // X is for player 1
    private val x = "X"
+    // O is for player 2
    private val o = "O"
 
+    // instantiate presenter class
     val presenter = Presenter()
 
+    // oncreate
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -31,6 +38,13 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    /**
+     * function to set all the button necessary for the ui
+     * 1 get the id
+     * 2. set on clickk listener
+     * 3. do something when click (call the presenter to get the model )
+     *
+     */
     fun initButton(): Unit{
         val btn_1 = findViewById(R.id.btn_1) as Button
         btn_1.setOnClickListener{
@@ -99,11 +113,20 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    fun toggleButton(btn: Button, sign: String): Unit{
+    /**
+     * function to change the state of the button
+     *  from "" -> X or "" -> O
+     */
+   private fun toggleButton(btn: Button, sign: String): Unit{
         btn.setText(sign)
     }
 
-
+    /**
+     * function to take turns for the ui
+     * 1. update data in the model
+     * 2. update view
+     * 3. check game states
+     */
     fun takeTurn(btn: Button, position: Int ): Unit{
         if(presenter.getWinner() == 0){
             // update data on model
@@ -126,17 +149,28 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * function to check if the cell already filled
+     */
     fun checkCell(btn: Button): Boolean{
         if(btn.text != "") return false
         return true
     }
 
+    /**
+     * function to format from numbers of player identifier become their sign
+     *  1 - > x
+     *  2 - > o
+     */
     fun getTurn(turn: Int): String{
         if(turn == 1) return x
         else return o
 
     }
 
+    /**
+     * function for landing page for the ui
+     */
     fun landingPage(): Unit{
         val alertDialog = AlertDialog.Builder(this)
         alertDialog.setMessage("Welcome to Tic Tac Srul")
@@ -147,12 +181,8 @@ class MainActivity : AppCompatActivity() {
 
         alertDialog.setNegativeButton("Exit", DialogInterface.OnClickListener(){
             dialogInterface : DialogInterface, i: Int ->
-
             System.exit(0)
-
         } )
-
-
         alertDialog.show()
     }
 

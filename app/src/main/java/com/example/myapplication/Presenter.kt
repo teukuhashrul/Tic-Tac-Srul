@@ -1,5 +1,10 @@
 package com.example.myapplication
 
+/**
+ * Class presenter so we can make this app architecture becoming MVP
+ *
+ * where model and view cant communicate directly
+ */
 class Presenter {
    private val games = Games()
 
