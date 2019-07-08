@@ -27,12 +27,12 @@
             tools:layout_editor_absoluteX="35dp"
             tools:visibility="visible"
             android:layout_alignRight="@+id/btn_6"
-            android:layout_marginRight="252dp"
-            android:layout_marginEnd="252dp"
+            android:layout_marginRight="245dp"
+            android:layout_marginEnd="245dp"
             android:textColor="@color/colorPrimaryDark"
 
             android:layout_alignEnd="@+id/btn_6"
-            android:layout_marginBottom="2dp"
+            android:layout_marginBottom="-1dp"
             android:layout_alignBottom="@+id/btn_2"/>
 
     <Button android:layout_width="108dp"
@@ -42,12 +42,12 @@
             android:textSize="50sp"
             android:text=""
             android:id="@+id/btn_2"
-            android:layout_marginBottom="0dp"
+            android:layout_marginBottom="1dp"
             android:layout_alignBottom="@+id/btn_3"
             android:layout_alignRight="@+id/btn_5"
             android:textColor="@color/colorPrimaryDark"
-            android:layout_marginRight="-2dp"
-            android:layout_marginEnd="-2dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginEnd="2dp"
             android:layout_alignEnd="@+id/btn_5"/>
 
     <Button android:layout_width="108dp"
@@ -58,10 +58,10 @@
             android:textSize="50sp"
             android:text=""
             android:layout_above="@+id/btn_4"
-            android:layout_marginBottom="51dp"
+            android:layout_marginBottom="28dp"
             android:layout_alignRight="@+id/btn_4"
-            android:layout_marginRight="-249dp"
-            android:layout_marginEnd="-249dp"
+            android:layout_marginRight="-244dp"
+            android:layout_marginEnd="-244dp"
             android:textColor="@color/colorPrimaryDark"
             android:layout_alignEnd="@+id/btn_4"/>
 
@@ -91,8 +91,8 @@
             android:layout_marginBottom="1dp"
             android:layout_alignBottom="@+id/btn_6"
             android:layout_alignRight="@+id/btn_8"
-            android:layout_marginRight="1dp"
-            android:layout_marginEnd="1dp"
+            android:layout_marginRight="-4dp"
+            android:layout_marginEnd="-4dp"
             android:textColor="@color/colorPrimaryDark"
             android:layout_alignEnd="@+id/btn_8"/>
 
@@ -104,10 +104,10 @@
             android:text=""
             android:textSize="50sp"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="268dp"
+            android:layout_marginBottom="334dp"
             android:layout_alignRight="@+id/btn_9"
-            android:layout_marginRight="2dp"
-            android:layout_marginEnd="2dp"
+            android:layout_marginRight="6dp"
+            android:layout_marginEnd="6dp"
             android:textColor="@color/colorPrimaryDark"
             android:layout_alignEnd="@+id/btn_9"/>
 
@@ -117,10 +117,10 @@
             android:text=""
             android:textSize="50sp"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="143dp"
+            android:layout_marginBottom="218dp"
             android:layout_toStartOf="@+id/btn_8"
-            android:layout_marginRight="20dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginRight="19dp"
+            android:layout_marginEnd="19dp"
             android:textColor="@color/colorPrimaryDark"
             android:layout_toLeftOf="@+id/btn_8"/>
 
@@ -132,10 +132,10 @@
             android:text=""
             android:textSize="50sp"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="141dp"
+            android:layout_marginBottom="217dp"
             android:layout_toStartOf="@+id/btn_9"
-            android:layout_marginRight="20dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginEnd="15dp"
             android:textColor="@color/colorPrimaryDark"
             android:layout_toLeftOf="@+id/btn_9"/>
 
@@ -145,12 +145,58 @@
             android:text=""
             android:textSize="50sp"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="141dp"
+            android:layout_marginBottom="220dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="34dp"
+            android:layout_marginRight="38dp"
             android:textColor="@color/colorPrimaryDark"
-            android:layout_marginEnd="34dp"/>
+            android:layout_marginEnd="38dp"/>
+    <TextView
+            android:text="Player 1 : X "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="239dp"
+            android:layout_marginEnd="239dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="129dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="35sp"
+
+    />
+
+    <TextView
+            android:text="Player 2 : O "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="128dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="35sp"
+
+    />
+    <Button
+            android:text="Restart Game"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_Restart"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="147dp"
+            android:layout_marginEnd="147dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="52dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:background="@drawable/rounded_button"
+    />
+
 </RelativeLayout>
 
 

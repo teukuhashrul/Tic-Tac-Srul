@@ -92,6 +92,11 @@ class MainActivity : AppCompatActivity() {
                 takeTurn(btn_9, 9)
             }
         }
+
+        val btn_Restart = findViewById(R.id.btn_Restart) as Button
+        btn_Restart.setOnClickListener({
+            recreate()
+        })
     }
 
     fun toggleButton(btn: Button, sign: String): Unit{
